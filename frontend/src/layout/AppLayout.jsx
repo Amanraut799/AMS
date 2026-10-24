@@ -6,7 +6,7 @@ import "./AppLayout.css";
 const adminLinks = [
   { to: "/admin", label: "Dashboard", end: true, icon: "⌂" },
   { to: "/employees", label: "Employees", icon: "♙" },
-  { to: "/admin/attendance", label: "Attendance records", icon: "◷" },
+  { to: "/admin/attendance", label: "Attendance records", end: true, icon: "◷" },
   { to: "/admin/attendance/monthly", label: "Attendance sheet", icon: "▦" },
   { to: "/admin/work-areas", label: "Work areas", icon: "⌖" },
   { to: "/admin/schedule", label: "Calendar & office hours", icon: "▣" },
