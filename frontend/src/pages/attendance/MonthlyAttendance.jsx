@@ -686,7 +686,7 @@ const styles = {
 
   page: {
     minHeight: "100vh",
-    backgroundColor: "#f5f7fb",
+    backgroundColor: "#f3f5f2",
     padding: "30px",
     boxSizing: "border-box",
     fontFamily: "Arial, sans-serif",
@@ -702,12 +702,12 @@ const styles = {
   title: {
     margin: 0,
     fontSize: "30px",
-    color: "#1f2937",
+    color: "#25332f",
   },
 
   subtitle: {
     marginTop: "6px",
-    color: "#6b7280",
+    color: "#718079",
   },
 
   controls: {
@@ -719,7 +719,7 @@ const styles = {
 
   select: {
     padding: "10px 14px",
-    border: "1px solid #d1d5db",
+    border: "1px solid #d6ded8",
     borderRadius: "7px",
     backgroundColor: "#ffffff",
     fontSize: "14px",
@@ -729,7 +729,7 @@ const styles = {
     padding: "10px 18px",
     border: "none",
     borderRadius: "7px",
-    backgroundColor: "#2563eb",
+    backgroundColor: "#47796f",
     color: "#ffffff",
     cursor: "pointer",
     fontSize: "14px",
@@ -738,10 +738,10 @@ const styles = {
   exportButton: {
     minHeight: "42px",
     padding: "10px 16px",
-    border: "1px solid #cbd5e1",
+    border: "1px solid #d6ded8",
     borderRadius: "7px",
     backgroundColor: "#ffffff",
-    color: "#1f2937",
+    color: "#25332f",
     cursor: "pointer",
     fontSize: "14px",
     fontWeight: 600,
@@ -768,7 +768,7 @@ const styles = {
     margin: 0,
     fontSize: "20px",
     fontWeight: "bold",
-    color: "#1f2937",
+    color: "#25332f",
   },
 
   monthToolbar: {
@@ -784,7 +784,7 @@ const styles = {
     flexDirection: "column",
     gap: "6px",
     flex: "1 1 240px",
-    color: "#374151",
+    color: "#45534e",
     fontSize: "13px",
     fontWeight: 600,
   },
@@ -793,14 +793,14 @@ const styles = {
     width: "100%",
     minHeight: "42px",
     padding: "10px 12px",
-    border: "1px solid #d1d5db",
+    border: "1px solid #d6ded8",
     borderRadius: "7px",
     fontSize: "14px",
   },
 
   resultCount: {
     marginTop: "5px",
-    color: "#6b7280",
+    color: "#718079",
     fontSize: "13px",
   },
 
@@ -820,26 +820,26 @@ const styles = {
   employeeHeader: {
     position: "sticky",
     left: 0,
-    backgroundColor: "#f9fafb",
+    backgroundColor: "#f7f8f6",
     padding: "14px 18px",
     textAlign: "left",
     minWidth: "220px",
-    borderBottom: "1px solid #e5e7eb",
+    borderBottom: "1px solid #e1e7e2",
     zIndex: 2,
   },
 
   departmentHeader: {
     padding: "14px",
-    backgroundColor: "#f9fafb",
+    backgroundColor: "#f7f8f6",
     minWidth: "110px",
-    borderBottom: "1px solid #e5e7eb",
+    borderBottom: "1px solid #e1e7e2",
   },
 
   dayHeader: {
     padding: "8px 10px",
     minWidth: "48px",
-    backgroundColor: "#f9fafb",
-    borderBottom: "1px solid #e5e7eb",
+    backgroundColor: "#f7f8f6",
+    borderBottom: "1px solid #e1e7e2",
     textAlign: "center",
     fontSize: "13px",
   },
@@ -849,32 +849,32 @@ const styles = {
     left: 0,
     backgroundColor: "#ffffff",
     padding: "14px 18px",
-    borderBottom: "1px solid #e5e7eb",
+    borderBottom: "1px solid #e1e7e2",
     zIndex: 1,
   },
 
   employeeName: {
     fontWeight: "bold",
-    color: "#1f2937",
+    color: "#25332f",
   },
 
   employeeCode: {
     fontSize: "12px",
-    color: "#6b7280",
+    color: "#718079",
     marginTop: "4px",
   },
 
   departmentCell: {
     padding: "14px",
-    borderBottom: "1px solid #e5e7eb",
-    color: "#4b5563",
+    borderBottom: "1px solid #e1e7e2",
+    color: "#5d6a64",
     textAlign: "center",
   },
 
   statusCell: {
     textAlign: "center",
     padding: "10px 6px",
-    borderBottom: "1px solid #e5e7eb",
+    borderBottom: "1px solid #e1e7e2",
   },
 
   present: {
@@ -923,7 +923,7 @@ const styles = {
   loading: {
     padding: "50px",
     textAlign: "center",
-    color: "#6b7280",
+    color: "#718079",
   },
 
   error: {
@@ -938,7 +938,7 @@ const styles = {
     display: "flex",
     gap: "25px",
     marginTop: "15px",
-    color: "#6b7280",
+    color: "#718079",
     fontSize: "14px",
   },
 
@@ -956,16 +956,16 @@ const styles = {
 
   statusBadge: { display: "inline-flex", alignItems: "center", justifyContent: "center", minWidth: 28, height: 28, padding: "0 5px", borderRadius: 15, fontSize: 10, fontWeight: 700, boxSizing: "border-box" },
   halfDayBadge: { background: "#f3e8ff", color: "#7e22ce" },
-  leaveBadge: { background: "#dbeafe", color: "#1d4ed8" },
-  holidayBadge: { background: "#ccfbf1", color: "#0f766e" },
-  weekOffBadge: { background: "#e2e8f0", color: "#475569" },
+  leaveBadge: { background: "#e8f1ed", color: "#35665e" },
+  holidayBadge: { background: "#e4f0e9", color: "#0f766e" },
+  weekOffBadge: { background: "#e1e7e2", color: "#5d6a64" },
   halfDayLegend: { color: "#7e22ce" },
-  leaveLegend: { color: "#1d4ed8" },
+  leaveLegend: { color: "#35665e" },
   dayOffLegend: { color: "#0f766e" },
 
   editHint: {
     marginLeft: "auto",
-    color: "#4b5563",
+    color: "#5d6a64",
   },
 
   dialogBackdrop: {
@@ -990,13 +990,13 @@ const styles = {
 
   dialogTitle: {
     margin: 0,
-    color: "#1f2937",
+    color: "#25332f",
     fontSize: "20px",
   },
 
   dialogText: {
     marginTop: "12px",
-    color: "#4b5563",
+    color: "#5d6a64",
     lineHeight: 1.5,
   },
 
@@ -1015,10 +1015,10 @@ const styles = {
 
   cancelButton: {
     padding: "10px 14px",
-    border: "1px solid #d1d5db",
+    border: "1px solid #d6ded8",
     borderRadius: "7px",
     backgroundColor: "#ffffff",
-    color: "#374151",
+    color: "#45534e",
     cursor: "pointer",
   },
 
@@ -1026,7 +1026,7 @@ const styles = {
     padding: "10px 14px",
     border: 0,
     borderRadius: "7px",
-    backgroundColor: "#2563eb",
+    backgroundColor: "#47796f",
     color: "#ffffff",
     fontWeight: 600,
     cursor: "pointer",

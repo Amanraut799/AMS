@@ -219,7 +219,7 @@ function Employees() {
 const styles = {
   page: {
     minHeight: "100vh",
-    backgroundColor: "#f5f7fb",
+    backgroundColor: "#f3f5f2",
     padding: "30px",
     boxSizing: "border-box",
     fontFamily: "Arial, sans-serif",
@@ -238,12 +238,12 @@ const styles = {
   },
 
   subtitle: {
-    color: "#6b7280",
+    color: "#718079",
     marginTop: "8px",
   },
 
   addButton: {
-    backgroundColor: "#2563eb",
+    backgroundColor: "#47796f",
     color: "#ffffff",
     textDecoration: "none",
     padding: "12px 18px",
@@ -259,9 +259,9 @@ const styles = {
   },
 
   syncButton: {
-    border: "1px solid #cbd5e1",
+    border: "1px solid #d6ded8",
     backgroundColor: "#ffffff",
-    color: "#1f2937",
+    color: "#25332f",
     padding: "11px 15px",
     borderRadius: "6px",
     fontWeight: 600,
@@ -293,14 +293,14 @@ const styles = {
   th: {
     textAlign: "left",
     padding: "15px",
-    borderBottom: "1px solid #e5e7eb",
-    backgroundColor: "#f9fafb",
+    borderBottom: "1px solid #e1e7e2",
+    backgroundColor: "#f7f8f6",
     fontSize: "14px",
   },
 
   td: {
     padding: "15px",
-    borderBottom: "1px solid #e5e7eb",
+    borderBottom: "1px solid #e1e7e2",
     fontSize: "14px",
   },
 
@@ -323,7 +323,7 @@ const styles = {
   },
 
   editButton: {
-    color: "#2563eb",
+    color: "#47796f",
     textDecoration: "none",
     marginRight: "10px",
     fontWeight: "bold",
@@ -354,7 +354,7 @@ const styles = {
   empty: {
     textAlign: "center",
     padding: "40px",
-    color: "#6b7280",
+    color: "#718079",
   },
 
   back: {

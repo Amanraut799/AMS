@@ -276,7 +276,7 @@ function EditEmployee() {
 const styles = {
   page: {
     minHeight: "100vh",
-    backgroundColor: "#f5f7fb",
+    backgroundColor: "#f3f5f2",
     padding: "30px",
     boxSizing: "border-box",
     fontFamily: "Arial, sans-serif",
@@ -300,12 +300,12 @@ const styles = {
   },
 
   subtitle: {
-    color: "#6b7280",
+    color: "#718079",
     marginTop: "8px",
   },
 
   backLink: {
-    color: "#2563eb",
+    color: "#47796f",
     textDecoration: "none",
     fontWeight: "bold",
   },
@@ -331,7 +331,7 @@ const styles = {
 
   input: {
     padding: "12px",
-    border: "1px solid #d1d5db",
+    border: "1px solid #d6ded8",
     borderRadius: "6px",
     fontSize: "15px",
     boxSizing: "border-box",
@@ -362,16 +362,16 @@ const styles = {
   cancel: {
     padding: "12px 20px",
     borderRadius: "6px",
-    border: "1px solid #d1d5db",
+    border: "1px solid #d6ded8",
     textDecoration: "none",
-    color: "#374151",
+    color: "#45534e",
   },
 
   submit: {
     padding: "12px 20px",
     borderRadius: "6px",
     border: "none",
-    backgroundColor: "#2563eb",
+    backgroundColor: "#47796f",
     color: "#ffffff",
     fontWeight: "bold",
     cursor: "pointer",
@@ -382,7 +382,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#f5f7fb",
+    backgroundColor: "#f3f5f2",
     fontFamily: "Arial, sans-serif",
   },
 };

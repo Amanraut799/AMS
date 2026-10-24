@@ -140,19 +140,19 @@ function WorkAreas() {
 }
 
 const styles = {
-  page: { minHeight: "100vh", padding: "32px", boxSizing: "border-box", background: "#f4f6fa", color: "#172033", fontFamily: "Arial,sans-serif" },
+  page: { minHeight: "100vh", padding: "32px", boxSizing: "border-box", background: "#f3f5f2", color: "#25332f", fontFamily: "Arial,sans-serif" },
   header: { display: "flex", justifyContent: "space-between", alignItems: "center", gap: 20, marginBottom: 22 },
-  title: { margin: 0, fontSize: 29 }, subtitle: { margin: "8px 0 0", color: "#64748b" }, back: { color: "#245be8", fontWeight: 600, textDecoration: "none", whiteSpace: "nowrap" },
-  notice: { padding: "15px 18px", marginBottom: 16, border: "1px solid #cbd8ff", borderRadius: 10, background: "#eef3ff", color: "#334776", lineHeight: 1.5 },
+  title: { margin: 0, fontSize: 29 }, subtitle: { margin: "8px 0 0", color: "#718079" }, back: { color: "#47796f", fontWeight: 600, textDecoration: "none", whiteSpace: "nowrap" },
+  notice: { padding: "15px 18px", marginBottom: 16, border: "1px solid #c4d9ca", borderRadius: 10, background: "#e8f1ed", color: "#30443e", lineHeight: 1.5 },
   panel: { background: "#fff", borderRadius: 12, padding: 24, marginBottom: 18, boxShadow: "0 3px 14px rgba(20,40,80,.05)" },
-  sectionTitle: { margin: 0, fontSize: 19 }, help: { color: "#64748b", fontSize: 13, lineHeight: 1.5, margin: "7px 0 18px" },
-  grid: { display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(210px,1fr))", gap: 16 }, field: { display: "grid", gap: 7, color: "#374151", fontSize: 13, fontWeight: 600 },
-  input: { width: "100%", boxSizing: "border-box", padding: "11px 12px", border: "1px solid #cbd5e1", borderRadius: 7, fontSize: 14, color: "#172033", background: "#fff" },
+  sectionTitle: { margin: 0, fontSize: 19 }, help: { color: "#718079", fontSize: 13, lineHeight: 1.5, margin: "7px 0 18px" },
+  grid: { display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(210px,1fr))", gap: 16 }, field: { display: "grid", gap: 7, color: "#45534e", fontSize: 13, fontWeight: 600 },
+  input: { width: "100%", boxSizing: "border-box", padding: "11px 12px", border: "1px solid #d6ded8", borderRadius: 7, fontSize: 14, color: "#25332f", background: "#fff" },
   formActions: { display: "flex", justifyContent: "flex-end", gap: 10, marginTop: 18, flexWrap: "wrap" },
-  primary: { border: 0, padding: "11px 16px", borderRadius: 7, background: "#245be8", color: "white", fontWeight: 700, cursor: "pointer" }, secondary: { border: "1px solid #cbd5e1", padding: "10px 14px", borderRadius: 7, background: "white", color: "#334155", fontWeight: 600, cursor: "pointer" },
-  tableWrap: { overflowX: "auto" }, table: { width: "100%", borderCollapse: "collapse", minWidth: 700 }, th: { textAlign: "left", padding: 13, background: "#f8fafc", color: "#526178", fontSize: 12, borderBottom: "1px solid #e5eaf1" }, td: { padding: 13, borderBottom: "1px solid #edf0f5", fontSize: 13, color: "#374151" },
-  active: { color: "#147a4a", background: "#e6f7ee", borderRadius: 20, padding: "5px 9px", fontSize: 11, fontWeight: 700 }, inactive: { color: "#8a4d13", background: "#fff1d6", borderRadius: 20, padding: "5px 9px", fontSize: 11, fontWeight: 700 }, disable: { border: "1px solid #fecaca", borderRadius: 6, padding: "7px 10px", background: "#fff", color: "#b91c1c", cursor: "pointer", marginLeft: 6 }, edit: { border: "1px solid #cbd5e1", borderRadius: 6, padding: "7px 10px", background: "#fff", color: "#334155", cursor: "pointer" }, enable: { border: "1px solid #bbf7d0", borderRadius: 6, padding: "7px 10px", background: "#f0fdf4", color: "#15803d", cursor: "pointer", fontWeight: 600 },
-  listHeading: { marginBottom: 10 }, empty: { color: "#64748b", padding: "18px 0" }, success: { marginBottom: 14, padding: 14, borderRadius: 8, background: "#e8f8ef", color: "#166534" }, error: { marginBottom: 14, padding: 14, borderRadius: 8, background: "#fee2e2", color: "#991b1b" },
+  primary: { border: 0, padding: "11px 16px", borderRadius: 7, background: "#47796f", color: "white", fontWeight: 700, cursor: "pointer" }, secondary: { border: "1px solid #d6ded8", padding: "10px 14px", borderRadius: 7, background: "white", color: "#47554f", fontWeight: 600, cursor: "pointer" },
+  tableWrap: { overflowX: "auto" }, table: { width: "100%", borderCollapse: "collapse", minWidth: 700 }, th: { textAlign: "left", padding: 13, background: "#f7f8f6", color: "#65726c", fontSize: 12, borderBottom: "1px solid #e1e7e2" }, td: { padding: 13, borderBottom: "1px solid #edf0f5", fontSize: 13, color: "#45534e" },
+  active: { color: "#147a4a", background: "#e6f7ee", borderRadius: 20, padding: "5px 9px", fontSize: 11, fontWeight: 700 }, inactive: { color: "#8a4d13", background: "#fff1d6", borderRadius: 20, padding: "5px 9px", fontSize: 11, fontWeight: 700 }, disable: { border: "1px solid #fecaca", borderRadius: 6, padding: "7px 10px", background: "#fff", color: "#b91c1c", cursor: "pointer", marginLeft: 6 }, edit: { border: "1px solid #d6ded8", borderRadius: 6, padding: "7px 10px", background: "#fff", color: "#47554f", cursor: "pointer" }, enable: { border: "1px solid #bbf7d0", borderRadius: 6, padding: "7px 10px", background: "#f0fdf4", color: "#15803d", cursor: "pointer", fontWeight: 600 },
+  listHeading: { marginBottom: 10 }, empty: { color: "#718079", padding: "18px 0" }, success: { marginBottom: 14, padding: 14, borderRadius: 8, background: "#e8f8ef", color: "#166534" }, error: { marginBottom: 14, padding: 14, borderRadius: 8, background: "#fee2e2", color: "#991b1b" },
 };
 
 export default WorkAreas;

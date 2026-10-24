@@ -172,7 +172,7 @@ const styles = {
   page: {
     minHeight: "100vh",
     padding: "30px",
-    backgroundColor: "#f4f6f8",
+    backgroundColor: "#f3f5f2",
   },
 
   header: {
@@ -189,7 +189,7 @@ const styles = {
 
   subtitle: {
     marginTop: "6px",
-    color: "#666",
+    color: "#66736d",
   },
 
   backButton: {
@@ -239,7 +239,7 @@ const styles = {
     padding: "9px 14px",
     border: "none",
     borderRadius: "6px",
-    backgroundColor: "#2563eb",
+    backgroundColor: "#47796f",
     color: "#ffffff",
     cursor: "pointer",
   },

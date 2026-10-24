@@ -98,15 +98,15 @@ function ResetPassword() {
 }
 
 const styles = {
-  page: { minHeight: "100vh", display: "grid", placeItems: "center", padding: 20, background: "#f4f6f8" },
+  page: { minHeight: "100vh", display: "grid", placeItems: "center", padding: 20, background: "#f3f5f2" },
   card: { width: "100%", maxWidth: 440, padding: 36, borderRadius: 14, background: "#fff", boxShadow: "0 8px 30px rgba(15,23,42,.08)" },
-  brand: { margin: "0 0 22px", color: "#2563eb", fontSize: 22, fontWeight: 700 },
-  title: { margin: 0, color: "#1f2937", fontSize: 26 },
-  description: { margin: "10px 0 24px", color: "#64748b", lineHeight: 1.5 },
-  field: { display: "flex", flexDirection: "column", gap: 8, margin: "18px 0", color: "#374151", fontSize: 14, fontWeight: 600 },
-  input: { padding: "12px 13px", border: "1px solid #cbd5e1", borderRadius: 7, fontSize: 15 },
-  button: { width: "100%", padding: 12, border: 0, borderRadius: 7, background: "#2563eb", color: "#fff", fontSize: 15, fontWeight: 600, cursor: "pointer" },
-  backLink: { display: "inline-block", marginTop: 20, color: "#2563eb", fontSize: 14, textDecoration: "none" },
+  brand: { margin: "0 0 22px", color: "#47796f", fontSize: 22, fontWeight: 700 },
+  title: { margin: 0, color: "#25332f", fontSize: 26 },
+  description: { margin: "10px 0 24px", color: "#718079", lineHeight: 1.5 },
+  field: { display: "flex", flexDirection: "column", gap: 8, margin: "18px 0", color: "#45534e", fontSize: 14, fontWeight: 600 },
+  input: { padding: "12px 13px", border: "1px solid #d6ded8", borderRadius: 7, fontSize: 15 },
+  button: { width: "100%", padding: 12, border: 0, borderRadius: 7, background: "#47796f", color: "#fff", fontSize: 15, fontWeight: 600, cursor: "pointer" },
+  backLink: { display: "inline-block", marginTop: 20, color: "#47796f", fontSize: 14, textDecoration: "none" },
   success: { marginTop: 18, padding: 12, borderRadius: 7, background: "#dcfce7", color: "#166534", fontSize: 14, lineHeight: 1.5 },
   error: { margin: "16px 0", padding: 12, borderRadius: 7, background: "#fee2e2", color: "#b91c1c", fontSize: 14, lineHeight: 1.5 },
 };

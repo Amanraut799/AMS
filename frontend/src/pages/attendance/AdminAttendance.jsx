@@ -325,14 +325,14 @@ function LocationDetail({ area, latitude, longitude, accuracy }) {
   if (latitude == null || longitude == null) return <span style={{ color: "#9ca3af" }}>No GPS data</span>;
   return <span title={`${latitude}, ${longitude}`}>
     {area || "Verified area"}<br />
-    <small style={{ color: "#6b7280" }}>{Number(latitude).toFixed(4)}, {Number(longitude).toFixed(4)}{accuracy != null ? ` · ±${Math.round(accuracy)} m` : ""}</small>
+    <small style={{ color: "#718079" }}>{Number(latitude).toFixed(4)}, {Number(longitude).toFixed(4)}{accuracy != null ? ` · ±${Math.round(accuracy)} m` : ""}</small>
   </span>;
 }
 
 const styles = {
   page: {
     minHeight: "100vh",
-    backgroundColor: "#f4f6f8",
+    backgroundColor: "#f3f5f2",
   },
 
   header: {
@@ -341,25 +341,25 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    borderBottom: "1px solid #e5e7eb",
+    borderBottom: "1px solid #e1e7e2",
   },
 
   logo: {
     margin: 0,
     fontSize: "28px",
-    color: "#2563eb",
+    color: "#47796f",
   },
 
   subtitle: {
     margin: "4px 0 0",
-    color: "#666",
+    color: "#66736d",
   },
 
   backButton: {
     padding: "10px 18px",
     border: "none",
     borderRadius: "6px",
-    backgroundColor: "#2563eb",
+    backgroundColor: "#47796f",
     color: "#ffffff",
     cursor: "pointer",
     fontSize: "14px",
@@ -381,14 +381,14 @@ const styles = {
   },
 
   description: {
-    color: "#666",
+    color: "#66736d",
   },
 
   refreshButton: {
     padding: "10px 20px",
     border: "none",
     borderRadius: "6px",
-    backgroundColor: "#2563eb",
+    backgroundColor: "#47796f",
     color: "#ffffff",
     cursor: "pointer",
   },
@@ -410,7 +410,7 @@ const styles = {
 
   statLabel: {
     display: "block",
-    color: "#666",
+    color: "#66736d",
     fontSize: "14px",
     marginBottom: "8px",
   },
@@ -449,7 +449,7 @@ const styles = {
     flexDirection: "column",
     gap: "7px",
     flex: "1 1 280px",
-    color: "#374151",
+    color: "#45534e",
     fontSize: "13px",
     fontWeight: 600,
   },
@@ -459,7 +459,7 @@ const styles = {
     flexDirection: "column",
     gap: "7px",
     minWidth: "160px",
-    color: "#374151",
+    color: "#45534e",
     fontSize: "13px",
     fontWeight: 600,
   },
@@ -468,7 +468,7 @@ const styles = {
     width: "100%",
     minHeight: "42px",
     padding: "10px 12px",
-    border: "1px solid #d1d5db",
+    border: "1px solid #d6ded8",
     borderRadius: "7px",
     fontSize: "14px",
   },
@@ -476,7 +476,7 @@ const styles = {
   filterSelect: {
     minHeight: "42px",
     padding: "9px 12px",
-    border: "1px solid #d1d5db",
+    border: "1px solid #d6ded8",
     borderRadius: "7px",
     backgroundColor: "#ffffff",
     fontSize: "14px",
@@ -484,7 +484,7 @@ const styles = {
 
   resultCount: {
     paddingBottom: "12px",
-    color: "#6b7280",
+    color: "#718079",
     fontSize: "13px",
   },
 
@@ -500,16 +500,16 @@ const styles = {
   th: {
     textAlign: "left",
     padding: "15px",
-    borderBottom: "2px solid #e5e7eb",
-    color: "#374151",
+    borderBottom: "2px solid #e1e7e2",
+    color: "#45534e",
     fontSize: "14px",
     whiteSpace: "nowrap",
   },
 
   td: {
     padding: "15px",
-    borderBottom: "1px solid #e5e7eb",
-    color: "#4b5563",
+    borderBottom: "1px solid #e1e7e2",
+    color: "#5d6a64",
     whiteSpace: "nowrap",
   },
 
@@ -537,7 +537,7 @@ const styles = {
   message: {
     textAlign: "center",
     padding: "50px",
-    color: "#666",
+    color: "#66736d",
   },
 
   error: {

@@ -453,7 +453,7 @@ const styles = {
   page: {
     minHeight: "100vh",
     display: "flex",
-    backgroundColor: "#f5f7fb",
+    backgroundColor: "#f3f5f2",
     fontFamily: "Arial, sans-serif",
   },
 
@@ -461,7 +461,7 @@ const styles = {
   sidebar: {
     width: "240px",
     minHeight: "100vh",
-    backgroundColor: "#111827",
+    backgroundColor: "#25332f",
     color: "#ffffff",
     padding: "25px 15px",
     boxSizing: "border-box",
@@ -479,7 +479,7 @@ const styles = {
 
   link: {
     display: "block",
-    color: "#d1d5db",
+    color: "#d6ded8",
     textDecoration: "none",
     padding: "13px 15px",
     borderRadius: "6px",
@@ -490,7 +490,7 @@ const styles = {
   activeLink: {
     display: "block",
     color: "#ffffff",
-    backgroundColor: "#2563eb",
+    backgroundColor: "#47796f",
     textDecoration: "none",
     padding: "13px 15px",
     borderRadius: "6px",
@@ -541,12 +541,12 @@ const styles = {
 
   subtitle: {
     marginTop: "8px",
-    color: "#6b7280",
+    color: "#718079",
   },
 
 
   userBadge: {
-    backgroundColor: "#2563eb",
+    backgroundColor: "#47796f",
     color: "#ffffff",
     padding: "10px 18px",
     borderRadius: "20px",
@@ -583,7 +583,7 @@ const styles = {
 
   cardLabel: {
     margin: 0,
-    color: "#6b7280",
+    color: "#718079",
     fontSize: "14px",
   },
 
@@ -621,7 +621,7 @@ const styles = {
   sectionDescription: {
     marginTop: "6px",
     marginBottom: 0,
-    color: "#6b7280",
+    color: "#718079",
     fontSize: "14px",
   },
 
@@ -630,7 +630,7 @@ const styles = {
     padding: "9px 16px",
     border: "none",
     borderRadius: "6px",
-    backgroundColor: "#2563eb",
+    backgroundColor: "#47796f",
     color: "#ffffff",
     cursor: "pointer",
   },
@@ -650,8 +650,8 @@ const styles = {
   th: {
     textAlign: "left",
     padding: "14px",
-    borderBottom: "2px solid #e5e7eb",
-    color: "#374151",
+    borderBottom: "2px solid #e1e7e2",
+    color: "#45534e",
     fontSize: "13px",
     whiteSpace: "nowrap",
   },
@@ -659,8 +659,8 @@ const styles = {
 
   td: {
     padding: "14px",
-    borderBottom: "1px solid #e5e7eb",
-    color: "#4b5563",
+    borderBottom: "1px solid #e1e7e2",
+    color: "#5d6a64",
     whiteSpace: "nowrap",
   },
 
@@ -690,7 +690,7 @@ const styles = {
   message: {
     textAlign: "center",
     padding: "40px",
-    color: "#6b7280",
+    color: "#718079",
   },
 
 

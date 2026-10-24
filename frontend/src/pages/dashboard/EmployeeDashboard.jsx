@@ -238,7 +238,7 @@ function EmployeeDashboard() {
 const styles = {
   page: {
     minHeight: "100vh",
-    backgroundColor: "#f4f6f8",
+    backgroundColor: "#f3f5f2",
   },
 
   header: {
@@ -247,18 +247,18 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    borderBottom: "1px solid #e5e7eb",
+    borderBottom: "1px solid #e1e7e2",
   },
 
   logo: {
     margin: 0,
     fontSize: "28px",
-    color: "#2563eb",
+    color: "#47796f",
   },
 
   subtitle: {
     margin: "4px 0 0",
-    color: "#666",
+    color: "#66736d",
   },
 
   logoutButton: {
@@ -274,14 +274,14 @@ const styles = {
   headerActions: { display: "flex", alignItems: "center", gap: "10px" },
 
   profileButton: {
-    padding: "10px 18px", border: "1px solid #d1d5db", borderRadius: "6px",
-    backgroundColor: "#ffffff", color: "#1f2937", cursor: "pointer", fontSize: "14px",
+    padding: "10px 18px", border: "1px solid #d6ded8", borderRadius: "6px",
+    backgroundColor: "#ffffff", color: "#25332f", cursor: "pointer", fontSize: "14px",
   },
 
   welcome: {
     padding: "35px 40px 20px",
   },
-  policyText: { marginTop: "10px", color: "#475569", fontSize: "13px", lineHeight: 1.5 },
+  policyText: { marginTop: "10px", color: "#5d6a64", fontSize: "13px", lineHeight: 1.5 },
 
   card: {
     margin: "20px 40px",
@@ -300,7 +300,7 @@ const styles = {
   statusBox: {
     textAlign: "center",
     padding: "35px",
-    border: "1px solid #e5e7eb",
+    border: "1px solid #e1e7e2",
     borderRadius: "10px",
   },
 
@@ -319,7 +319,7 @@ const styles = {
   },
 
   statusText: {
-    color: "#666",
+    color: "#66736d",
     marginBottom: "25px",
   },
 
@@ -337,7 +337,7 @@ const styles = {
   },
 
   timeLabel: {
-    color: "#666",
+    color: "#66736d",
     fontSize: "14px",
   },
 
@@ -349,7 +349,7 @@ const styles = {
     padding: "12px 24px",
     border: "none",
     borderRadius: "7px",
-    backgroundColor: "#2563eb",
+    backgroundColor: "#47796f",
     color: "#ffffff",
     cursor: "pointer",
     fontSize: "16px",
@@ -374,8 +374,8 @@ const styles = {
   message: {
     marginTop: "20px",
     padding: "12px",
-    backgroundColor: "#eff6ff",
-    color: "#1d4ed8",
+    backgroundColor: "#e8f1ed",
+    color: "#35665e",
     borderRadius: "6px",
     textAlign: "center",
   },
@@ -385,14 +385,14 @@ const styles = {
   padding: "12px 24px",
   border: "none",
   borderRadius: "7px",
-  backgroundColor: "#2563eb",
+  backgroundColor: "#47796f",
   color: "#ffffff",
   cursor: "pointer",
   fontSize: "15px",
 },
-  leaveButton: { margin: "20px 0 0 10px", padding: "12px 24px", border: "1px solid #cbd5e1", borderRadius: "7px", backgroundColor: "#ffffff", color: "#1f2937", cursor: "pointer", fontSize: "15px" },
+  leaveButton: { margin: "20px 0 0 10px", padding: "12px 24px", border: "1px solid #d6ded8", borderRadius: "7px", backgroundColor: "#ffffff", color: "#25332f", cursor: "pointer", fontSize: "15px" },
   lateNote: { color: "#b45309", fontWeight: 600 },
-  workedNote: { color: "#64748b", fontSize: "14px" },
+  workedNote: { color: "#718079", fontSize: "14px" },
 };
 
 export default EmployeeDashboard;

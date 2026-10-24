@@ -111,7 +111,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#f4f6f8",
+    backgroundColor: "#f3f5f2",
   },
 
   card: {
@@ -130,7 +130,7 @@ const styles = {
 
   subtitle: {
     textAlign: "center",
-    color: "#666",
+    color: "#66736d",
     marginBottom: "30px",
   },
 
@@ -159,7 +159,7 @@ const styles = {
     border: "none",
     borderRadius: "6px",
     cursor: "pointer",
-    backgroundColor: "#2563eb",
+    backgroundColor: "#47796f",
     color: "#ffffff",
   },
 
@@ -176,7 +176,7 @@ const styles = {
   },
 
   forgotLink: {
-    color: "#2563eb",
+    color: "#47796f",
     fontSize: "14px",
     textDecoration: "none",
   },

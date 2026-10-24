@@ -1,5 +1,6 @@
 .app-shell {
   min-height: 100vh;
+  background: var(--app-bg, #f3f5f2);
 }
 
 .app-sidebar {
@@ -10,9 +11,9 @@
   width: 252px;
   flex-direction: column;
   padding: 23px 16px 16px;
-  color: #d6e1f0;
-  background: #10213b;
-  box-shadow: 5px 0 24px rgba(15, 35, 65, 0.08);
+  color: #d5e1da;
+  background: #20342f;
+  box-shadow: 8px 0 28px rgba(27, 47, 40, 0.09);
 }
 
 .app-brand {
@@ -20,7 +21,7 @@
   align-items: center;
   gap: 11px;
   padding: 4px 8px 30px;
-  color: #fff;
+  color: #20342f;
   text-decoration: none;
   font-size: 20px;
   font-weight: 750;
@@ -33,14 +34,15 @@
   height: 34px;
   place-items: center;
   border-radius: 10px;
-  color: #fff;
-  background: #3777f5;
+  color: #20342f;
+  background: #a9c7b4;
   font-size: 18px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
 }
 
 .app-nav-caption {
   padding: 0 12px 9px;
-  color: #8192ac;
+  color: #91a49a;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 1.2px;
@@ -60,7 +62,7 @@
   padding: 0 12px;
   border: 0;
   border-radius: 9px;
-  color: #c1cee0;
+  color: #c8d5ce;
   background: transparent;
   text-align: left;
   text-decoration: none;
@@ -74,13 +76,13 @@
 .app-nav-link:hover,
 .app-logout:hover {
   color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .app-nav-link.is-active {
-  color: #fff;
-  background: #2c65d8;
-  box-shadow: 0 5px 12px rgba(20, 75, 180, 0.24);
+  color: #1f4f44;
+  background: #dcebe2;
+  box-shadow: inset 3px 0 0 #76a38d;
 }
 
 .app-nav-icon {
@@ -114,8 +116,8 @@
   flex: 0 0 34px;
   place-items: center;
   border-radius: 50%;
-  color: #dceaff;
-  background: #294569;
+  color: #20342f;
+  background: #a9c7b4;
   font-weight: 700;
 }
 
@@ -133,24 +135,25 @@
 }
 
 .app-user-details strong {
-  color: #f2f6fc;
+  color: #f1f5f2;
   font-size: 12px;
   font-weight: 600;
 }
 
 .app-user-details small {
-  color: #91a2ba;
+  color: #9eafa5;
   font-size: 11px;
 }
 
 .app-logout {
-  color: #f2c5c5;
+  color: #e7c7ba;
 }
 
 .app-content {
   min-width: 0;
   min-height: 100vh;
   margin-left: 252px;
+  background: var(--app-bg, #f3f5f2);
 }
 
 .app-menu-toggle,
@@ -185,7 +188,7 @@
     place-items: center;
     border: 1px solid #d7e0eb;
     border-radius: 10px;
-    color: #173251;
+    color: #20342f;
     background: #fff;
     box-shadow: 0 3px 12px rgba(21, 43, 71, 0.12);
     font-size: 21px;

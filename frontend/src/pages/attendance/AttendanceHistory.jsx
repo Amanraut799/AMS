@@ -209,7 +209,7 @@ function AttendanceHistory() {
 const styles = {
   page: {
     minHeight: "100vh",
-    backgroundColor: "#f4f6f8",
+    backgroundColor: "#f3f5f2",
   },
 
   header: {
@@ -218,25 +218,25 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    borderBottom: "1px solid #e5e7eb",
+    borderBottom: "1px solid #e1e7e2",
   },
 
   logo: {
     margin: 0,
     fontSize: "28px",
-    color: "#2563eb",
+    color: "#47796f",
   },
 
   subtitle: {
     margin: "4px 0 0",
-    color: "#666",
+    color: "#66736d",
   },
 
   backButton: {
     padding: "10px 18px",
     border: "none",
     borderRadius: "6px",
-    backgroundColor: "#2563eb",
+    backgroundColor: "#47796f",
     color: "#ffffff",
     cursor: "pointer",
     fontSize: "14px",
@@ -261,12 +261,12 @@ const styles = {
     overflowX: "auto",
   },
 
-  filters: { display: "flex", alignItems: "end", gap: "14px", flexWrap: "wrap", marginBottom: "22px", paddingBottom: "18px", borderBottom: "1px solid #e5e7eb" },
+  filters: { display: "flex", alignItems: "end", gap: "14px", flexWrap: "wrap", marginBottom: "22px", paddingBottom: "18px", borderBottom: "1px solid #e1e7e2" },
   filterGroup: { display: "grid", gap: "7px" },
-  filterLabel: { fontSize: "13px", fontWeight: 600, color: "#374151" },
-  filterInput: { minWidth: "170px", padding: "10px 12px", border: "1px solid #d1d5db", borderRadius: "7px", color: "#1f2937", background: "#fff", font: "inherit" },
-  clearButton: { padding: "10px 14px", border: "1px solid #d1d5db", borderRadius: "7px", color: "#374151", background: "#fff", cursor: "pointer" },
-  resultCount: { marginLeft: "auto", paddingBottom: "10px", color: "#6b7280", fontSize: "13px" },
+  filterLabel: { fontSize: "13px", fontWeight: 600, color: "#45534e" },
+  filterInput: { minWidth: "170px", padding: "10px 12px", border: "1px solid #d6ded8", borderRadius: "7px", color: "#25332f", background: "#fff", font: "inherit" },
+  clearButton: { padding: "10px 14px", border: "1px solid #d6ded8", borderRadius: "7px", color: "#45534e", background: "#fff", cursor: "pointer" },
+  resultCount: { marginLeft: "auto", paddingBottom: "10px", color: "#718079", fontSize: "13px" },
 
   table: {
     width: "100%",
@@ -276,15 +276,15 @@ const styles = {
   th: {
     textAlign: "left",
     padding: "15px",
-    borderBottom: "2px solid #e5e7eb",
-    color: "#374151",
+    borderBottom: "2px solid #e1e7e2",
+    color: "#45534e",
     fontSize: "14px",
   },
 
   td: {
     padding: "15px",
-    borderBottom: "1px solid #e5e7eb",
-    color: "#4b5563",
+    borderBottom: "1px solid #e1e7e2",
+    color: "#5d6a64",
   },
 
   status: {
@@ -301,7 +301,7 @@ const styles = {
   centerMessage: {
     textAlign: "center",
     padding: "50px",
-    color: "#666",
+    color: "#66736d",
   },
 
   error: {

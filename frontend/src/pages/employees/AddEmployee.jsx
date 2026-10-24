@@ -365,7 +365,7 @@ const styles = {
 
   page: {
     minHeight: "100vh",
-    backgroundColor: "#f5f7fb",
+    backgroundColor: "#f3f5f2",
     padding: "30px",
     fontFamily: "Arial, sans-serif",
     boxSizing: "border-box",
@@ -389,13 +389,13 @@ const styles = {
   },
 
   subtitle: {
-    color: "#6b7280",
+    color: "#718079",
     marginTop: "8px",
   },
 
   backButton: {
     textDecoration: "none",
-    color: "#2563eb",
+    color: "#47796f",
     fontWeight: "bold",
   },
 
@@ -420,7 +420,7 @@ const styles = {
 
   input: {
     padding: "12px",
-    border: "1px solid #d1d5db",
+    border: "1px solid #d6ded8",
     borderRadius: "6px",
     fontSize: "15px",
     boxSizing: "border-box",
@@ -451,16 +451,16 @@ const styles = {
   cancel: {
     padding: "12px 20px",
     borderRadius: "6px",
-    border: "1px solid #d1d5db",
+    border: "1px solid #d6ded8",
     textDecoration: "none",
-    color: "#374151",
+    color: "#45534e",
   },
 
   submit: {
     padding: "12px 20px",
     borderRadius: "6px",
     border: "none",
-    backgroundColor: "#2563eb",
+    backgroundColor: "#47796f",
     color: "#ffffff",
     fontWeight: "bold",
     cursor: "pointer",
@@ -497,13 +497,13 @@ const styles = {
   },
 
   successSubtitle: {
-    color: "#6b7280",
+    color: "#718079",
     marginTop: "8px",
   },
 
   credentialsCard: {
     marginTop: "30px",
-    border: "1px solid #e5e7eb",
+    border: "1px solid #e1e7e2",
     borderRadius: "10px",
     overflow: "hidden",
     textAlign: "left",
@@ -514,22 +514,22 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     padding: "16px 20px",
-    borderBottom: "1px solid #e5e7eb",
+    borderBottom: "1px solid #e1e7e2",
   },
 
   credentialLabel: {
-    color: "#6b7280",
+    color: "#718079",
     fontSize: "14px",
   },
 
   credentialValue: {
-    color: "#111827",
+    color: "#25332f",
     fontSize: "15px",
   },
 
   passwordBox: {
     padding: "20px",
-    backgroundColor: "#f9fafb",
+    backgroundColor: "#f7f8f6",
   },
 
   passwordRow: {
@@ -542,7 +542,7 @@ const styles = {
 
   password: {
     fontSize: "20px",
-    color: "#111827",
+    color: "#25332f",
     letterSpacing: "1px",
   },
 
@@ -550,7 +550,7 @@ const styles = {
     padding: "8px 15px",
     border: "none",
     borderRadius: "6px",
-    backgroundColor: "#2563eb",
+    backgroundColor: "#47796f",
     color: "#ffffff",
     cursor: "pointer",
   },
@@ -577,7 +577,7 @@ const styles = {
     padding: "12px 20px",
     border: "none",
     borderRadius: "6px",
-    backgroundColor: "#2563eb",
+    backgroundColor: "#47796f",
     color: "#ffffff",
     cursor: "pointer",
     fontWeight: "bold",
@@ -585,10 +585,10 @@ const styles = {
 
   secondaryButton: {
     padding: "12px 20px",
-    border: "1px solid #d1d5db",
+    border: "1px solid #d6ded8",
     borderRadius: "6px",
     backgroundColor: "#ffffff",
-    color: "#374151",
+    color: "#45534e",
     cursor: "pointer",
   },
 };
