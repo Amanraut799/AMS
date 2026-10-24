@@ -86,13 +86,13 @@ async function loadAttendance() {
   }
 
   return (
-    <div style={styles.page}>
+    <div className="admin-dashboard-page" style={styles.page}>
 
       {/* Main Content */}
-      <main style={styles.main}>
+      <main className="admin-dashboard-main" style={styles.main}>
 
         {/* Header */}
-        <header style={styles.header}>
+        <header className="admin-dashboard-header" style={styles.header}>
 
           <div>
 
@@ -106,7 +106,7 @@ async function loadAttendance() {
 
           </div>
 
-          <div style={styles.headerRight}>
+          <div className="admin-dashboard-header-actions" style={styles.headerRight}>
 
             <button
               onClick={refreshDashboard}
@@ -133,7 +133,7 @@ async function loadAttendance() {
 
 
 {/* Today's Statistics - Row 1 */}
-<section style={styles.cards}>
+<section className="admin-dashboard-cards" style={styles.cards}>
 
   <div style={styles.card}>
     <p style={styles.cardLabel}>
@@ -190,7 +190,7 @@ async function loadAttendance() {
 
 
 {/* Today's Attendance Details - Row 2 */}
-<section style={styles.cards}>
+<section className="admin-dashboard-cards" style={styles.cards}>
 
   <div style={styles.card}>
     <p style={styles.cardLabel}>
@@ -254,7 +254,7 @@ async function loadAttendance() {
 
 
         {/* Today's Attendance */}
-        <section style={styles.attendanceSection}>
+        <section className="admin-dashboard-attendance" style={styles.attendanceSection}>
 
           <div style={styles.sectionHeader}>
 
@@ -428,7 +428,7 @@ async function loadAttendance() {
 
 
         {/* Welcome */}
-        <section style={styles.welcome}>
+        <section className="admin-dashboard-welcome" style={styles.welcome}>
 
           <h2>
             Welcome to AttendPro 👋

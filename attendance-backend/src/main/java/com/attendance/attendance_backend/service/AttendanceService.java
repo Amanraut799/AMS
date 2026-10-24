@@ -190,6 +190,10 @@ public class AttendanceService {
             LocalDate attendanceDate,
             String status
     ) {
+        if ("WEEKLY_OFF".equals(status) && !attendancePolicyService.isWeekOff(attendanceDate)) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Only a configured weekly off can be restored to weekly off");
+        }
+
         Employee employee = employeeRepository.findById(employeeId)
                 .orElseThrow(() -> new ResponseStatusException(
                         HttpStatus.NOT_FOUND,
@@ -206,7 +210,7 @@ public class AttendanceService {
                 });
 
         attendance.setStatus(status);
-        if ("ABSENT".equals(status)) {
+        if ("ABSENT".equals(status) || "WEEKLY_OFF".equals(status)) {
             attendance.setCheckInTime(null);
             attendance.setCheckOutTime(null);
             attendance.setLate(false);

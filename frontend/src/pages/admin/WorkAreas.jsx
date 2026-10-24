@@ -98,7 +98,7 @@ function WorkAreas() {
   }
 
   return (
-    <main style={styles.page}>
+    <main className="app-page-shell" style={styles.page}>
       <header style={styles.header}>
         <div><h1 style={styles.title}>Attendance Work Areas</h1><p style={styles.subtitle}>Manage the GPS zones where employees may start and end their workday.</p></div>
         <Link to="/admin" style={styles.back}>← Dashboard</Link>

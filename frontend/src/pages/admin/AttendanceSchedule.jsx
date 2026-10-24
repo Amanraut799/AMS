@@ -71,9 +71,9 @@ function AttendanceSchedule() {
     setEditingHolidayId(holiday.id); setHolidayForm({ holidayDate: holiday.holidayDate, name: holiday.name, description: holiday.description || "" });
   }
 
-  if (loading) return <main style={styles.page}><p>Loading attendance settings…</p></main>;
+  if (loading) return <main className="app-page-shell" style={styles.page}><p>Loading attendance settings…</p></main>;
 
-  return <main style={styles.page}>
+  return <main className="app-page-shell" style={styles.page}>
     <header style={styles.header}><div><h1 style={styles.title}>Calendar & Office Hours</h1><p style={styles.muted}>Set working days, attendance times, and company holidays.</p></div><Link to="/admin" style={styles.back}>← Dashboard</Link></header>
     {message && <div role="status" style={styles.success}>{message}</div>}{error && <div role="alert" style={styles.error}>{error}</div>}
 

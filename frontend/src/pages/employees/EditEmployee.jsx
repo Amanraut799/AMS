@@ -107,7 +107,7 @@ function EditEmployee() {
 
   if (error && !form.employeeCode) {
     return (
-      <div style={styles.page}>
+      <div className="app-page-shell employee-form-page" style={styles.page}>
         <div style={styles.errorBox}>
           {error}
         </div>
@@ -120,7 +120,7 @@ function EditEmployee() {
   }
 
   return (
-    <div style={styles.page}>
+    <div className="app-page-shell employee-form-page" style={styles.page}>
       <div style={styles.container}>
 
         <div style={styles.header}>
@@ -138,7 +138,7 @@ function EditEmployee() {
 
         <form onSubmit={handleSubmit} style={styles.form}>
 
-          <div style={styles.grid}>
+          <div className="employee-form-grid" style={styles.grid}>
 
             <div style={styles.field}>
               <label>Employee Code *</label>

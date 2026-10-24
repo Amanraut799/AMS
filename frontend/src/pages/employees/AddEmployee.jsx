@@ -66,7 +66,7 @@ function AddEmployee() {
     const employee = registrationResult.employee;
 
     return (
-      <div style={styles.page}>
+      <div className="app-page-shell employee-form-page" style={styles.page}>
         <div style={styles.successContainer}>
 
           <div style={styles.successIcon}>
@@ -188,7 +188,7 @@ function AddEmployee() {
   }
 
   return (
-    <div style={styles.page}>
+    <div className="app-page-shell employee-form-page" style={styles.page}>
       <div style={styles.container}>
 
         <div style={styles.header}>
@@ -215,7 +215,7 @@ function AddEmployee() {
           style={styles.form}
         >
 
-          <div style={styles.grid}>
+          <div className="employee-form-grid" style={styles.grid}>
 
             <div style={styles.field}>
               <label>First Name *</label>

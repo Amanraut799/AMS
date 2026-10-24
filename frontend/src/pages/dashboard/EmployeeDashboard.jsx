@@ -116,8 +116,8 @@ function EmployeeDashboard() {
   }
 
   return (
-    <div style={styles.page}>
-      <header style={styles.header}>
+    <div className="employee-dashboard-page" style={styles.page}>
+      <header className="employee-dashboard-header" style={styles.header}>
         <div>
           <h1 style={styles.logo}>AttendPro</h1>
 
@@ -128,13 +128,13 @@ function EmployeeDashboard() {
 
       </header>
 
-      <div style={styles.welcome}>
+      <div className="employee-dashboard-welcome" style={styles.welcome}>
         <h2>Welcome, {user?.email}</h2>
         <p>{today}</p>
         {policy && <p style={styles.policyText}>Office hours {formatOfficeTime(policy.officeStartTime)}–{formatOfficeTime(policy.officeEndTime)} · Check-in {formatOfficeTime(policy.checkInOpensAt)}–{formatOfficeTime(policy.checkInClosesAt)} · Late after {policy.lateGraceMinutes} min grace · Full day from {policy.halfDayMinimumMinutes / 60} hours</p>}
       </div>
 
-      <div style={styles.card}>
+      <div className="employee-dashboard-card" style={styles.card}>
         <h2 style={styles.cardTitle}>
           Today's Attendance
         </h2>
@@ -171,7 +171,7 @@ function EmployeeDashboard() {
             {attendance.late && <p style={styles.lateNote}>Late arrival · {attendance.lateMinutes || 0} minutes</p>}
             {attendance.workedMinutes != null && <p style={styles.workedNote}>Worked {Math.floor(attendance.workedMinutes / 60)}h {attendance.workedMinutes % 60}m</p>}
 
-            <div style={styles.timeContainer}>
+            <div className="employee-dashboard-times" style={styles.timeContainer}>
               <div style={styles.timeBox}>
                 <span style={styles.timeLabel}>
                   Check In
@@ -225,12 +225,13 @@ function EmployeeDashboard() {
       </div>
 
       <button
+        className="employee-dashboard-action"
         onClick={() => navigate("/attendance/history")}
         style={styles.historyButton}
       >
         View Attendance History
       </button>
-      <button onClick={() => navigate("/leaves")} style={styles.leaveButton}>My Leave</button>
+      <button className="employee-dashboard-action employee-dashboard-leave-action" onClick={() => navigate("/leaves")} style={styles.leaveButton}>My Leave</button>
     </div>
   );
 }

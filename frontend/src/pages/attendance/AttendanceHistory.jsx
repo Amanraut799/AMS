@@ -73,7 +73,7 @@ function AttendanceHistory() {
   }
 
   return (
-    <div style={styles.page}>
+    <div className="app-page-shell" style={styles.page}>
       <header style={styles.header}>
         <div>
           <h1 style={styles.logo}>AttendPro</h1>

@@ -76,16 +76,22 @@ public class DashboardService {
                 attendanceRepository.countByAttendanceDate(today);
 
         List<Employee> employees = employeeRepository.findAll();
-        boolean nonWorkingToday = policyService.isWeekOff(today)
-                || !holidayService.between(today, today).isEmpty();
-        long expectedToday = nonWorkingToday ? 0 : totalEmployees;
+        boolean holidayToday = !holidayService.between(today, today).isEmpty();
+        boolean weekOffToday = policyService.isWeekOff(today) && !holidayToday;
+        boolean nonWorkingToday = weekOffToday || holidayToday;
+        long absentRecordsToday = attendanceRepository.countByAttendanceDateAndStatus(today, "ABSENT");
+        long expectedToday = holidayToday ? 0 : weekOffToday
+                ? presentToday + halfDayToday + absentRecordsToday
+                : totalEmployees;
         if (!nonWorkingToday) {
             Set<Long> onLeave = leaveService.approvedOverlapping(employees, today, today).stream()
                     .map(request -> request.getEmployee().getId()).collect(java.util.stream.Collectors.toSet());
             expectedToday -= onLeave.size();
         }
 
-        long absentToday = Math.max(0, expectedToday - presentToday - halfDayToday);
+        long absentToday = weekOffToday
+                ? absentRecordsToday
+                : Math.max(0, expectedToday - presentToday - halfDayToday);
 
         if (absentToday < 0) {
             absentToday = 0;
@@ -135,11 +141,13 @@ public class DashboardService {
         Set<LocalDate> holidayDates = holidays.stream().map(CompanyHoliday::getHolidayDate).collect(java.util.stream.Collectors.toSet());
         Map<Integer, String> nonWorkingDays = new HashMap<>();
         Set<LocalDate> expectedWorkDates = new HashSet<>();
+        Set<LocalDate> weeklyOffDates = new HashSet<>();
         for (LocalDate date = startDate; !date.isAfter(endDate); date = date.plusDays(1)) {
             if (holidayDates.contains(date)) {
                 nonWorkingDays.put(date.getDayOfMonth(), "HOLIDAY");
             } else if (policyService.isWeekOff(date)) {
                 nonWorkingDays.put(date.getDayOfMonth(), "WEEKLY_OFF");
+                weeklyOffDates.add(date);
             } else {
                 expectedWorkDates.add(date);
             }
@@ -189,7 +197,8 @@ public class DashboardService {
         for (Attendance attendance : attendanceRecords) {
             attendanceMap.computeIfAbsent(attendance.getEmployee().getId(), ignored -> new HashMap<>())
                     .put(attendance.getAttendanceDate().getDayOfMonth(), attendance.getStatus());
-            if (expectedWorkDates.contains(attendance.getAttendanceDate())) {
+            if (expectedWorkDates.contains(attendance.getAttendanceDate())
+                    || weeklyOffDates.contains(attendance.getAttendanceDate())) {
                 Set<LocalDate> employeeLeaveDates = leaveDatesByEmployee.get(attendance.getEmployee().getId());
                 if (employeeLeaveDates != null) employeeLeaveDates.remove(attendance.getAttendanceDate());
                 if ("PRESENT".equalsIgnoreCase(attendance.getStatus())) totalPresent++;
@@ -227,6 +236,15 @@ public class DashboardService {
                     totalPossibleAttendance++;
                     String status = dailyAttendance.get(date.getDayOfMonth());
                     if (status == null || "ABSENT".equalsIgnoreCase(status)) totalAbsent++;
+                }
+            }
+            for (LocalDate date : weeklyOffDates) {
+                String status = dailyAttendance.get(date.getDayOfMonth());
+                if ("PRESENT".equalsIgnoreCase(status)
+                        || "HALF_DAY".equalsIgnoreCase(status)
+                        || "ABSENT".equalsIgnoreCase(status)) {
+                    totalPossibleAttendance++;
+                    if ("ABSENT".equalsIgnoreCase(status)) totalAbsent++;
                 }
             }
         }

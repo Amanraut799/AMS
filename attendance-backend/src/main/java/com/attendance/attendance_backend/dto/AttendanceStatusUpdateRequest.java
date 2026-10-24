@@ -5,7 +5,7 @@ import jakarta.validation.constraints.Pattern;
 
 public record AttendanceStatusUpdateRequest(
         @NotBlank
-        @Pattern(regexp = "PRESENT|ABSENT", message = "Status must be PRESENT or ABSENT")
+        @Pattern(regexp = "PRESENT|ABSENT|WEEKLY_OFF", message = "Status must be PRESENT, ABSENT, or WEEKLY_OFF")
         String status
 ) {
 }

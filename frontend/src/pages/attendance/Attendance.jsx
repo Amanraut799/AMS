@@ -65,7 +65,7 @@ function Attendance() {
   }
 
   return (
-    <div style={styles.page}>
+    <div className="app-page-shell" style={styles.page}>
       <div style={styles.header}>
         <div>
           <h1 style={styles.title}>Attendance</h1>

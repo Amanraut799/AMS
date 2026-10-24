@@ -104,9 +104,18 @@ function MonthlyAttendance() {
 
   function requestAttendanceStatusChange(employee, day) {
     const currentStatus = getStatus(employee, day);
-    if (currentStatus !== "PRESENT" && currentStatus !== "ABSENT") return;
+    const isWeeklyOff = data?.nonWorkingDays?.[day] === "WEEKLY_OFF";
+    if (isWeeklyOff) {
+      const attendanceDate = new Date(year, month - 1, day);
+      const currentDate = new Date();
+      currentDate.setHours(0, 0, 0, 0);
+      if (attendanceDate > currentDate) return;
+    }
+    if (currentStatus !== "PRESENT" && currentStatus !== "ABSENT" && !(isWeeklyOff && currentStatus === "WEEKLY_OFF")) return;
 
-    const nextStatus = currentStatus === "PRESENT" ? "ABSENT" : "PRESENT";
+    const nextStatus = isWeeklyOff
+      ? ({ WEEKLY_OFF: "PRESENT", PRESENT: "ABSENT", ABSENT: "WEEKLY_OFF" })[currentStatus]
+      : (currentStatus === "PRESENT" ? "ABSENT" : "PRESENT");
     setStatusError("");
     setPendingStatusChange({ employee, day, currentStatus, nextStatus });
   }
@@ -330,7 +339,7 @@ function MonthlyAttendance() {
   }
 
   return (
-    <div style={styles.page}>
+    <div className="app-page-shell monthly-attendance-page" style={styles.page}>
 
       <div style={styles.header}>
 
@@ -344,7 +353,7 @@ function MonthlyAttendance() {
           </p>
         </div>
 
-        <div style={styles.controls}>
+        <div className="monthly-attendance-controls" style={styles.controls}>
 
           <select
             aria-label="Attendance month"
@@ -564,27 +573,28 @@ function MonthlyAttendance() {
                         employee,
                         day
                       );
+                    const isHoliday = data?.nonWorkingDays?.[day] === "HOLIDAY";
 
                     return (
                       <td
                         key={day}
                         style={styles.statusCell}
                       >
-                        {status === "PRESENT" || status === "ABSENT" ? (
+                        {!isHoliday && (status === "PRESENT" || status === "ABSENT" || (status === "WEEKLY_OFF" && data?.nonWorkingDays?.[day] === "WEEKLY_OFF" && new Date(year, month - 1, day) <= new Date(new Date().setHours(0, 0, 0, 0)))) ? (
                           <button
                             type="button"
                             className={getStatusClass(status)}
                             style={{
                               ...styles.statusButton,
-                              ...(status === "PRESENT" ? styles.present : styles.absent),
+                              ...(status === "PRESENT" ? styles.present : status === "ABSENT" ? styles.absent : styles.weekOffAction),
                               ...(savingCell === `${employee.employeeId}-${day}` ? styles.savingStatus : {}),
                             }}
                             disabled={savingCell === `${employee.employeeId}-${day}`}
                             onClick={() => requestAttendanceStatusChange(employee, day)}
-                            title={`Change ${status.toLowerCase()} to ${status === "PRESENT" ? "absent" : "present"}`}
-                            aria-label={`${employee.firstName} ${employee.lastName}, ${getDayName(day)} ${day}: ${status.toLowerCase()}. Click to change to ${status === "PRESENT" ? "absent" : "present"}.`}
+                            title={`Change ${status.replaceAll("_", " ").toLowerCase()} to ${data?.nonWorkingDays?.[day] === "WEEKLY_OFF" ? ({ WEEKLY_OFF: "present", PRESENT: "absent", ABSENT: "weekly off" })[status] : (status === "PRESENT" ? "absent" : "present")}`}
+                            aria-label={`${employee.firstName} ${employee.lastName}, ${getDayName(day)} ${day}: ${status.replaceAll("_", " ").toLowerCase()}. Click to change status.`}
                           >
-                            {savingCell === `${employee.employeeId}-${day}` ? "…" : status === "PRESENT" ? "P" : "A"}
+                            {savingCell === `${employee.employeeId}-${day}` ? "…" : getStatusLabel(status)}
                           </button>
                         ) : (
                           <span style={{ ...styles.statusBadge, ...(status === "HALF_DAY" ? styles.halfDayBadge : status === "LEAVE" ? styles.leaveBadge : status === "HOLIDAY" ? styles.holidayBadge : status === "WEEKLY_OFF" ? styles.weekOffBadge : styles.empty) }} title={status.replaceAll("_", " ")}>{getStatusLabel(status)}</span>
@@ -633,7 +643,7 @@ function MonthlyAttendance() {
         <span><b style={styles.dayOffLegend}>H / WO</b> Holiday / weekly off</span>
 
         <span style={styles.editHint}>
-          Click P or A, then confirm to change a recorded status
+        Admins can update P/A status and record work on past or current weekly off days
         </span>
 
       </div>
@@ -959,6 +969,7 @@ const styles = {
   leaveBadge: { background: "#e8f1ed", color: "#35665e" },
   holidayBadge: { background: "#e4f0e9", color: "#0f766e" },
   weekOffBadge: { background: "#e1e7e2", color: "#5d6a64" },
+  weekOffAction: { display: "inline-flex", alignItems: "center", justifyContent: "center", width: 30, height: 30, borderRadius: 15, background: "#e1e7e2", color: "#5d6a64", fontWeight: 700, fontSize: 10 },
   halfDayLegend: { color: "#7e22ce" },
   leaveLegend: { color: "#35665e" },
   dayOffLegend: { color: "#0f766e" },

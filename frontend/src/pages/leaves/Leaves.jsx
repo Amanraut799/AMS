@@ -50,7 +50,7 @@ function Leaves() {
   const currentDate = new Date();
   const today = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, "0")}-${String(currentDate.getDate()).padStart(2, "0")}`;
 
-  return <main style={styles.page}>
+  return <main className="app-page-shell" style={styles.page}>
     <header style={styles.header}><div><h1 style={styles.title}>{isAdmin ? "Leave requests" : "My leave"}</h1><p style={styles.muted}>{isAdmin ? "Review and track employee leave requests." : "Request time off and check its approval status."}</p></div><Link to={home} style={styles.back}>← Dashboard</Link></header>
     {message && <div role="status" style={styles.success}>{message}</div>}{error && <div role="alert" style={styles.error}>{error}</div>}
 

@@ -83,7 +83,7 @@ function AdminAttendance() {
   const availableStatuses = [...new Set(attendance.map((record) => record.status).filter(Boolean))].sort();
 
   return (
-    <div style={styles.page}>
+    <div className="app-page-shell" style={styles.page}>
       <header style={styles.header}>
         <div>
           <h1 style={styles.logo}>AttendPro</h1>

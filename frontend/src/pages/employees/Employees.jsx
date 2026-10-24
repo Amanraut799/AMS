@@ -81,7 +81,7 @@ function Employees() {
   }
 
   return (
-    <div style={styles.page}>
+    <div className="app-page-shell" style={styles.page}>
       <div style={styles.header}>
         <div>
           <h1 style={styles.title}>Employees</h1>
