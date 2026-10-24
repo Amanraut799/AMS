@@ -1,0 +1,14 @@
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+
+# Build output and installed dependencies
+**/target/
+frontend/node_modules/
+frontend/dist/
+
+# Local IDE and OS files
+**/.idea/
+.DS_Store
+Thumbs.db
