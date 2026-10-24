@@ -1,6 +1,7 @@
 package com.attendance.attendance_backend.service;
 import com.attendance.attendance_backend.dto.LoginRequest;
 import com.attendance.attendance_backend.dto.LoginResponse;
+import com.attendance.attendance_backend.entity.Role;
 import com.attendance.attendance_backend.entity.User;
 import com.attendance.attendance_backend.repository.UserRepository;
 import com.attendance.attendance_backend.security.JwtService;
@@ -36,6 +37,9 @@ public class AuthService {
     if (userRepository.findByEmail(user.getEmail()).isPresent()) {
         throw new RuntimeException("Email already registered");
     }
+
+    // Public registration must never allow a caller to grant themselves admin access.
+    user.setRole(Role.EMPLOYEE);
 
     // Convert plain-text password into BCrypt hash
     user.setPassword( passwordEncoder.encode(user.getPassword()) );
