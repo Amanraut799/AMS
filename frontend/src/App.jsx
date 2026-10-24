@@ -1,22 +1,24 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Login from "./pages/auth/Login";
-import Dashboard from "./pages/dashboard/Dashboard";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import { useAuth } from "./context/AuthContext";
-import Employees from "./pages/employees/Employees";
-import AddEmployee from "./pages/employees/AddEmployee";
-import EditEmployee from "./pages/employees/EditEmployee";
-import Attendance from "./pages/attendance/Attendance";
-import EmployeeDashboard from "./pages/dashboard/EmployeeDashboard";
-import AttendanceHistory from "./pages/attendance/AttendanceHistory";
-import AdminAttendance from "./pages/attendance/AdminAttendance";
-import MonthlyAttendance from "./pages/attendance/MonthlyAttendance";
-import ForgotPassword from "./pages/auth/ForgotPassword";
-import ResetPassword from "./pages/auth/ResetPassword";
-import UserProfile from "./pages/profile/UserProfile";
-import WorkAreas from "./pages/admin/WorkAreas";
-import AttendanceSchedule from "./pages/admin/AttendanceSchedule";
-import Leaves from "./pages/leaves/Leaves";
+
+const Login = lazy(() => import("./pages/auth/Login"));
+const Dashboard = lazy(() => import("./pages/dashboard/Dashboard"));
+const Employees = lazy(() => import("./pages/employees/Employees"));
+const AddEmployee = lazy(() => import("./pages/employees/AddEmployee"));
+const EditEmployee = lazy(() => import("./pages/employees/EditEmployee"));
+const Attendance = lazy(() => import("./pages/attendance/Attendance"));
+const EmployeeDashboard = lazy(() => import("./pages/dashboard/EmployeeDashboard"));
+const AttendanceHistory = lazy(() => import("./pages/attendance/AttendanceHistory"));
+const AdminAttendance = lazy(() => import("./pages/attendance/AdminAttendance"));
+const MonthlyAttendance = lazy(() => import("./pages/attendance/MonthlyAttendance"));
+const ForgotPassword = lazy(() => import("./pages/auth/ForgotPassword"));
+const ResetPassword = lazy(() => import("./pages/auth/ResetPassword"));
+const UserProfile = lazy(() => import("./pages/profile/UserProfile"));
+const WorkAreas = lazy(() => import("./pages/admin/WorkAreas"));
+const AttendanceSchedule = lazy(() => import("./pages/admin/AttendanceSchedule"));
+const Leaves = lazy(() => import("./pages/leaves/Leaves"));
 
 function LoginRoute() {
   const { isAuthenticated, user } = useAuth();
@@ -42,6 +44,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Suspense fallback={<div role="status" style={{ padding: 24, color: "#526174" }}>Loading page…</div>}>
       <Routes>
 
         <Route
@@ -157,6 +160,7 @@ function App() {
         />
 
       </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

@@ -142,10 +142,11 @@ public class DashboardService {
         Map<Integer, String> nonWorkingDays = new HashMap<>();
         Set<LocalDate> expectedWorkDates = new HashSet<>();
         Set<LocalDate> weeklyOffDates = new HashSet<>();
+        Set<String> configuredWeeklyOffDays = policyService.getWeekOffDays();
         for (LocalDate date = startDate; !date.isAfter(endDate); date = date.plusDays(1)) {
             if (holidayDates.contains(date)) {
                 nonWorkingDays.put(date.getDayOfMonth(), "HOLIDAY");
-            } else if (policyService.isWeekOff(date)) {
+            } else if (configuredWeeklyOffDays.contains(date.getDayOfWeek().name())) {
                 nonWorkingDays.put(date.getDayOfMonth(), "WEEKLY_OFF");
                 weeklyOffDates.add(date);
             } else {

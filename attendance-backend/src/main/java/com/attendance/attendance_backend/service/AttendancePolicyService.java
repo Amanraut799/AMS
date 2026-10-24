@@ -47,7 +47,8 @@ public class AttendancePolicyService {
         return repository.save(policy);
     }
 
-    public boolean isWeekOff(LocalDate date) { return parseDays(get().getWeekOffDays()).contains(date.getDayOfWeek().name()); }
+    public boolean isWeekOff(LocalDate date) { return getWeekOffDays().contains(date.getDayOfWeek().name()); }
+    public Set<String> getWeekOffDays() { return parseDays(get().getWeekOffDays()); }
     public boolean isWorkingDay(LocalDate date) { return !isWeekOff(date); }
 
     public AttendanceCheckInResult evaluateCheckIn(LocalTime time) {
