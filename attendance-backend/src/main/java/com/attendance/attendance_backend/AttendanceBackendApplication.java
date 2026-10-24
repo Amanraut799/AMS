@@ -26,19 +26,18 @@ public class AttendanceBackendApplication {
 			if (!StringUtils.hasText(email) || !StringUtils.hasText(password)) {
 				return;
 			}
-			if (userRepository.existsByRole(Role.ADMIN) || userRepository.existsByRole(Role.SUPER_ADMIN)) {
-				return;
-			}
-			if (userRepository.findByEmailIgnoreCase(email.trim()).isPresent()) {
+			User admin = userRepository.findByEmailIgnoreCase(email.trim()).orElseGet(() -> {
+				User newAdmin = new User();
+				newAdmin.setFirstName(firstName);
+				newAdmin.setLastName(lastName);
+				newAdmin.setEmail(email.trim().toLowerCase(java.util.Locale.ROOT));
+				newAdmin.setRole(Role.ADMIN);
+				return newAdmin;
+			});
+			if (admin.getRole() != Role.ADMIN && admin.getRole() != Role.SUPER_ADMIN) {
 				throw new IllegalStateException("Bootstrap admin email already belongs to a non-admin account");
 			}
-
-			User admin = new User();
-			admin.setFirstName(firstName);
-			admin.setLastName(lastName);
-			admin.setEmail(email.trim().toLowerCase());
 			admin.setPassword(passwordEncoder.encode(password));
-			admin.setRole(Role.ADMIN);
 			admin.setActive(true);
 			userRepository.save(admin);
 		};
