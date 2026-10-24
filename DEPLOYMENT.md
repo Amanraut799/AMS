@@ -6,7 +6,7 @@ This setup keeps the current React, Spring Boot, and MySQL stack and targets a d
 
 - Render free web services spin down after 15 minutes without requests and take about a minute to wake. The API may feel slow on the first demo request after idle.
 - Aiven Free MySQL includes 1 GB storage and 1 GB RAM. Aiven may power off a free service after an extended period of inactivity; check its console/email and start it again if needed.
-- Render free services cannot send outbound SMTP over ports 25, 465, or 587. Password-reset email through Gmail SMTP will not work on this free host. Email delivery would need an HTTPS email API instead.
+- Render free services cannot send outbound SMTP over ports 25, 465, or 587. Password-reset email through Gmail SMTP will not work on this free host. Set `RESEND_API_KEY` on the API service to send reset emails through Resend's HTTPS API. Set `MAIL_FROM` to a sender address verified with that provider and keep `APP_PASSWORD_RESET_URL` pointed at the deployed frontend reset-password page. Paid hosting can continue using the `MAIL_*` SMTP settings.
 - Use demo-only employee records. This free setup is not suitable for live company attendance or borrower data.
 
 ## Deploy steps

@@ -16,6 +16,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.http.MediaType;
+import org.springframework.web.client.RestClient;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -34,10 +36,14 @@ public class PasswordResetService {
     private final PasswordResetTokenRepository tokenRepository;
     private final PasswordEncoder passwordEncoder;
     private final ObjectProvider<JavaMailSender> mailSenderProvider;
+    private final RestClient restClient = RestClient.create();
     private final SecureRandom secureRandom = new SecureRandom();
 
     @Value("${spring.mail.host:}")
     private String mailHost;
+
+    @Value("${RESEND_API_KEY:}")
+    private String resendApiKey;
 
     @Value("${app.mail.from:no-reply@attendpro.local}")
     private String senderAddress;
@@ -59,7 +65,10 @@ public class PasswordResetService {
 
     @Transactional
     public void requestReset(String email) {
-        if (mailHost == null || mailHost.isBlank() || mailSenderProvider.getIfAvailable() == null) {
+        boolean apiMailConfigured = resendApiKey != null && !resendApiKey.isBlank();
+        boolean smtpConfigured = mailHost != null && !mailHost.isBlank()
+                && mailSenderProvider.getIfAvailable() != null;
+        if (!apiMailConfigured && !smtpConfigured) {
             throw new ResponseStatusException(
                     HttpStatus.SERVICE_UNAVAILABLE,
                     "Password reset email is not configured. Contact your administrator."
@@ -122,7 +131,22 @@ public class PasswordResetService {
                 + "If you did not request this, you can ignore this email.");
 
         try {
-            mailSenderProvider.getObject().send(message);
+            if (resendApiKey != null && !resendApiKey.isBlank()) {
+                restClient.post()
+                        .uri("https://api.resend.com/emails")
+                        .header("Authorization", "Bearer " + resendApiKey)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .body(java.util.Map.of(
+                                "from", senderAddress,
+                                "to", java.util.List.of(user.getEmail()),
+                                "subject", "Reset your AttendPro password",
+                                "text", message.getText()
+                        ))
+                        .retrieve()
+                        .toBodilessEntity();
+            } else {
+                mailSenderProvider.getObject().send(message);
+            }
         } catch (RuntimeException exception) {
             logger.error("Unable to send password reset email for employee account", exception);
             tokenRepository.deleteByUserId(user.getId());
